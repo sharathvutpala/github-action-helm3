@@ -2,12 +2,12 @@
 
 set -e
 
-ls -lasth ~/
-ls -lasth ~/.kube/
+ls -lasth "${GITHUB_WORKSPACE}/"
+ls -lasth "${GITHUB_WORKSPACE}/.kube/"
 
 echo -e "\033[36mSetting up kubectl configuration\033[0m"
 mkdir ~/.kube/ || true
-if [ -f ~/.kube/config ]; then
+if [ -f "${GITHUB_WORKSPACE}/.kube/config" ]; then
   echo -e "\033[36mExisting kubeconfig found, using that and ignoring input\033[0m"
 else
   echo -e "\033[36mUsing kubeconfig from input\033[0m"
