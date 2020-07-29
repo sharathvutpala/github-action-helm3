@@ -238,7 +238,7 @@ jobs:
         env:
           KIND_IP: ${{ steps.inspect.outputs.ip }}
       - run: mkdir /github/home/.kube || true
-      - run: cp ~/.kube/config /github/home/.kube
+      - run: cp ~/.kube/config /github/home/.kube/
       - name: List installed packages
         uses: ./
         id: helmlistcountfirst
