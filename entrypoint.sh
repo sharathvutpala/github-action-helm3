@@ -2,6 +2,8 @@
 
 set -e
 
+ls -lasth ~/
+
 echo -e "\033[36mSetting up kubectl configuration\033[0m"
 mkdir ~/.kube/ || true
 if [ -f "~/.kube/config" ]; then
