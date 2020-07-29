@@ -3,6 +3,7 @@
 set -e
 
 ls -lasth ~/
+ls -lasth /github/home/
 
 echo -e "\033[36mSetting up kubectl configuration\033[0m"
 mkdir ~/.kube/ || true
