@@ -237,7 +237,7 @@ jobs:
       - run: sed -i "s/127.0.0.1:32768/${KIND_IP}:6443/g" ~/.kube/config
         env:
           KIND_IP: ${{ steps.inspect.outputs.ip }}
-      - run: mkdir /github/home/.kube || true
+      - run: mkdir /github/home/.kube -r || true
       - run: cp ~/.kube/config /github/home/.kube/
       - name: List installed packages
         uses: ./
