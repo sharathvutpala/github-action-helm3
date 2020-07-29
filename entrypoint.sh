@@ -2,13 +2,11 @@
 
 set -e
 
-ls -lasth "${GITHUB_WORKSPACE}/" || true
-ls -lasth "${GITHUB_WORKSPACE}/.kube/" || true
-
 echo -e "\033[36mSetting up kubectl configuration\033[0m"
 mkdir ~/.kube/ || true
 if [ -f "${GITHUB_WORKSPACE}/.kube/config" ]; then
   echo -e "\033[36mExisting kubeconfig found, using that and ignoring input\033[0m"
+  cp "${GITHUB_WORKSPACE}/.kube/config" ~/.kube/config
 else
   echo -e "\033[36mUsing kubeconfig from input\033[0m"
   echo "${INPUT_KUBECONFIG}" > ~/.kube/config
